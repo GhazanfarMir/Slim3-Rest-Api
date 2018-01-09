@@ -1,8 +1,7 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
+    "name": "ghazanfarmir/slim-api-crud",
+    "description": "A Slim Api implementing basic CRUD operations",
     "keywords": ["microframework", "rest", "router", "psr7"],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
     "license": "MIT",
     "authors": [
         {
