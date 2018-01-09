@@ -77,6 +77,8 @@ class UsersController
 
         try {
 
+            $this->logger->info("Creating a new user", ['data' => $request->getParsedBody()]);
+
             $user = (new User)->add($request);
 
             if ($user) {
@@ -107,6 +109,8 @@ class UsersController
     {
         try {
 
+            $this->logger->info("Updating an existing user", ['id' => $args['id']]);
+
             $user = (new User)->update($request, $args);
 
             if ($user) {
@@ -136,6 +140,8 @@ class UsersController
      */
     public function delete(Request $request, Response $response, $args)
     {
+
+        $this->logger->info("Deleting user", ['id' => $args['id']]);
 
         $user = User::find($args['id']);
 
