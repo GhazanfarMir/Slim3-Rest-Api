@@ -1,0 +1,36 @@
+version: '2'
+
+volumes:
+    logs:
+        driver: local
+
+services:
+    db:
+        build:
+          context: ./
+        image: mysql:latest
+        container_name: db
+        restart: always
+        volumes:
+          - ./db_data:/var/lib/mysql
+        ports:
+          - 3306:3306
+        environment:
+          MYSQL_ROOT_PASSWORD: slim
+          MYSQL_DATABASE: slim
+          MYSQL_USER: slim
+          MYSQL_PASSWORD: slim
+
+    slim:
+        image: php:7-alpine
+        working_dir: /var/www
+        command: php -S 0.0.0.0:8080 -t public public/index.php
+        environment:
+            docker: "true"
+        ports:
+            - 8080:8080
+        volumes:
+            - .:/var/www
+            - logs:/var/www/logs
+        links:
+            - db
