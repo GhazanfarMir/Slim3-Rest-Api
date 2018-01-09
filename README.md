@@ -4,7 +4,29 @@ This is the simple REST Api implementing basic CRUD operations related to a user
 
 ## Installation
 
- 
+#### Git Clone
+
+To get the latest source you can use git clone.
+
+`$ git clone https://github.com/ghazanfarmir/Slim-RestApi-CRUD.git /path/to/slim-rest-api-crud`
+
+#### Composer
+
+Installation can be done with the use of composer. If you don't have composer yet you can install it by doing:
+
+`$ curl -s https://getcomposer.org/installer | php`
+
+To install it globally
+
+`$ sudo mv composer.phar /usr/local/bin/composer`
+
+```
+$ cd /path/to/slim-rest-api-crud
+$ composer update
+$ composer install
+```
+
+## Database
 
 ## Usage
 
