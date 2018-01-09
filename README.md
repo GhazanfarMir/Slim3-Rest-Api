@@ -28,6 +28,8 @@ $ composer install
 
 ## Database
 
+Import `dababase/mysql.sql` in your MySQL Server, this will create `users` table.
+
 ## Usage
 
 ### Api Endpoints
