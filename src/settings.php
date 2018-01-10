@@ -18,11 +18,11 @@ return [
 
         // Database settings
         'db' => [
-            'driver' => 'mysql',
-            'host' => 'localhost',
-            'database' => 'slim_api',
-            'username' => 'root',
-            'password' => 'ebury',
+            'driver' => getenv('DB_DRIVER'),
+            'host' => getenv('DB_HOST'),
+            'database' => getenv('DB_NAME'),
+            'username' => getenv('DB_USERNAME'),
+            'password' => getenv('DB_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
