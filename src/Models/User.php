@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Slim\Http\Request;
 
-class User extends Model {
+class User extends BaseModel {
 
     /**
      * @var array
