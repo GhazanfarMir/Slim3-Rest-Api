@@ -29,9 +29,6 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
      * @param string $requestUri the request URI
      * @param array|object|null $requestData the request data
      * @return \Slim\Http\Response
-     * @throws \Exception
-     * @throws \Slim\Exception\MethodNotAllowedException
-     * @throws \Slim\Exception\NotFoundException
      */
     public function runApp($requestMethod, $requestUri, $requestData = null)
     {
@@ -77,5 +74,4 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
         // Return the response
         return $response;
     }
-
 }
