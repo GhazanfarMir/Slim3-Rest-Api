@@ -26,9 +26,25 @@ $ composer update
 $ composer install
 ```
 
-## Database
+## Database Setup
 
-Import `dababase/mysql.sql` in your MySQL Server, this will create `users` table.
+ - Import `dababase/mysql.sql` in your MySQL Server, this will create `users` table.
+ - Configure database credentials in `/path/to/slim-rest-api-crud/src/settings.php`:
+ 
+```
+// Database settings
+
+'db' => [
+    'driver' => 'mysql',
+    'host' => 'localhost',
+    'database' => 'slim_api',
+    'username' => '',
+    'password' => '',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+]
+```
 
 ## Usage
 
