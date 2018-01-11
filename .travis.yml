@@ -1,0 +1,22 @@
+sudo: required
+
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+env:
+  - PLATFORM=travis
+
+php:
+  - 7.1
+
+before_install:
+  - sudo apt-get update
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+script: phpunit
