@@ -14,7 +14,6 @@ class UsersTransformer
      */
     public function transform(User $user)
     {
-
         return [
             'id' => $user->id,
             'firstName' => $user->first_name,
@@ -33,17 +32,12 @@ class UsersTransformer
      */
     public function transformCollection(Collection $users)
     {
-
         $data = array();
 
-        foreach($users as $user) {
-
+        foreach ($users as $user) {
             $data[] = UsersTransformer::transform($user);
-
         }
 
         return $data;
-
     }
-
 }
