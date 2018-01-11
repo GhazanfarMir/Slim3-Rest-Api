@@ -24,27 +24,3 @@ $capsule->addConnection($container->get('settings')['db']);
 $capsule->bootEloquent();
 $capsule->setAsGlobal();
 $container['db'] = $capsule;
-
-/*$container['db'] = function ($c) {
-    $capsule = new \Illuminate\Database\Capsule\Manager;
-    $capsule->addConnection($c->get('settings')['db']);
-    $capsule->bootEloquent();
-    $capsule->setAsGlobal();
-    return $capsule;
-};*/
-
-// Service factory for the ORM
-/*$container['db'] = function ($container) {
-    $capsule = new \Illuminate\Database\Capsule\Manager;
-    $capsule->addConnection($container['settings']['db']);
-    $capsule->setAsGlobal();
-    $capsule->bootEloquent();
-    return $capsule;
-};*/
-
-
-// controllers
-
-/*$container['App\Controllers\UsersController'] = function ($c) {
-    return new App\Controllers\UsersController($c->get('logger'));
-};*/
