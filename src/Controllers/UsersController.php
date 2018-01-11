@@ -31,7 +31,6 @@ class UsersController
      */
     public function all(Request $request, Response $response)
     {
-
         $users = User::all();
 
         // logging within the controller
@@ -74,15 +73,12 @@ class UsersController
      */
     public function add(Request $request, Response $response)
     {
-
         try {
-
             $this->logger->info("Creating a new user", ['data' => $request->getParsedBody()]);
 
             $user = (new User)->add($request);
 
             if ($user) {
-
                 return $response->withJson([
                     'code' => 201,
                     'message' => 'New user added successfully.',
@@ -94,7 +90,6 @@ class UsersController
                 'code' => 400,
                 'message' => 'There were some problems with the data provided.',
             ], 400);
-
         } catch (\Exception $e) {
         }
     }
@@ -108,13 +103,11 @@ class UsersController
     public function update(Request $request, Response $response, $args)
     {
         try {
-
             $this->logger->info("Updating an existing user", ['id' => $args['id']]);
 
             $user = (new User)->update($request, $args);
 
             if ($user) {
-
                 return $response->withJson([
                     'code' => 200,
                     'message' => 'User has been updated successfully.',
@@ -126,9 +119,7 @@ class UsersController
                 'code' => 400,
                 'message' => 'There were some problems while updating the record.',
             ], 400);
-
         } catch (\Exception $e) {
-
         }
     }
 
@@ -140,13 +131,11 @@ class UsersController
      */
     public function delete(Request $request, Response $response, $args)
     {
-
         $this->logger->info("Deleting user", ['id' => $args['id']]);
 
         $user = User::find($args['id']);
 
         if ($user) {
-
             $user->delete();
 
             return $response->withJson([
@@ -159,6 +148,5 @@ class UsersController
             'code' => '404',
             'message' => 'no user found'
         ], 404);
-
     }
 }

@@ -14,14 +14,12 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 });
 
 $app->group('/api', function () use ($app) {
-
     $app->group('/v1', function () use ($app) {
 
         /**
          * Route GET /api/v1/users
          */
         $app->get('/users', function ($request, $response) {
-
             $users = User::all();
 
             // logging within the controller
@@ -32,14 +30,12 @@ $app->group('/api', function () use ($app) {
                 'total_results' => $users->count(),
                 'data' => $users
             ]);
-
         });
 
         /**
          * Route GET /api/v1/users/{id}
          */
         $app->get('/users/{id}', function ($request, $response, $args) {
-
             $user = User::find($args['id']);
 
             if ($user) {
@@ -59,15 +55,12 @@ $app->group('/api', function () use ($app) {
          * Route POST /api/v1/users
          */
         $app->post('/users', function ($request, $response) {
-
             try {
-
                 $this->logger->info("Creating a new user", ['data' => $request->getParsedBody()]);
 
                 $user = (new User)->add($request);
 
                 if ($user) {
-
                     return $response->withJson([
                         'code' => 201,
                         'message' => 'New user added successfully.',
@@ -79,7 +72,6 @@ $app->group('/api', function () use ($app) {
                     'code' => 400,
                     'message' => 'There were some problems with the data provided.',
                 ], 400);
-
             } catch (\Exception $e) {
             }
         });
@@ -88,15 +80,12 @@ $app->group('/api', function () use ($app) {
          * Route PUT /api/v1/users/{id}
          */
         $app->put('/users/{id}', function ($request, $response, $args) {
-
             try {
-
                 $this->logger->info("Updating an existing user", ['id' => $args['id']]);
 
                 $user = (new User)->update($request, $args);
 
                 if ($user) {
-
                     return $response->withJson([
                         'code' => 200,
                         'message' => 'User has been updated successfully.',
@@ -108,9 +97,7 @@ $app->group('/api', function () use ($app) {
                     'code' => 400,
                     'message' => 'There were some problems while updating the record.',
                 ], 400);
-
             } catch (\Exception $e) {
-
             }
         });
 
@@ -119,13 +106,11 @@ $app->group('/api', function () use ($app) {
          */
 
         $app->delete('/users/{id}', function ($request, $response, $args) {
-
             $this->logger->info("Deleting user", ['id' => $args['id']]);
 
             $user = User::find($args['id']);
 
             if ($user) {
-
                 $user->delete();
 
                 return $response->withJson([
@@ -138,8 +123,6 @@ $app->group('/api', function () use ($app) {
                 'code' => '404',
                 'message' => 'no user found'
             ], 404);
-
         });
-
     });
 });
