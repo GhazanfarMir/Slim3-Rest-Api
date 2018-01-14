@@ -41,9 +41,7 @@ class User extends BaseModel
         }
 
         if ($user->save()) {
-
             return User::find($user->id);
-
         } // refetch full user model
 
         return false;
@@ -75,9 +73,7 @@ class User extends BaseModel
         }
 
         if ($user->save()) {
-
             return User::find($user->id);
-
         } // refetch full user model
 
         return false;

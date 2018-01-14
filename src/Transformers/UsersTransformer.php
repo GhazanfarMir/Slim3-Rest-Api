@@ -32,7 +32,6 @@ class UsersTransformer
      */
     public function transformCollection(Collection $users)
     {
-
         $data = array();
 
         foreach ($users as $user) {
