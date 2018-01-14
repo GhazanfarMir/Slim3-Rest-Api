@@ -1,6 +1,6 @@
 # Slim3 Framework REST Api with CRUD
 
-[![StyleCI](https://styleci.io/repos/116841369/shield?branch=develop)](https://styleci.io/repos/116841369)
+[![StyleCI](https://styleci.io/repos/116841369/shield?branch=master)](https://styleci.io/repos/116841369)
 [![Build Status](https://travis-ci.org/ghazanfarmir/Slim3-Rest-Api.svg?branch=develop)](https://travis-ci.org/ghazanfarmir/Slim3-Rest-Api)
 
 This is the simple REST Api implementing basic CRUD operations related to a user.
