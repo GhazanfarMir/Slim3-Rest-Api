@@ -6,7 +6,6 @@ use Slim\Http\Request;
 
 class User extends BaseModel
 {
-
     /**
      * @var array
      */
@@ -14,11 +13,12 @@ class User extends BaseModel
         'first_name',
         'surname',
         'email',
-        'date_of_birth'
+        'date_of_birth',
     ];
 
     /**
      * @param Request $request
+     *
      * @return bool|\Illuminate\Database\Eloquent\Model
      */
     public function addUser(Request $request)
@@ -37,11 +37,13 @@ class User extends BaseModel
 
             // set field as null if empty
 
-            $user->$col = !empty($val)?$val:null;
+            $user->$col = !empty($val) ? $val : null;
         }
 
         if ($user->save()) {
+
             return User::find($user->id);
+
         } // refetch full user model
 
         return false;
@@ -49,7 +51,8 @@ class User extends BaseModel
 
     /**
      * @param Request $request
-     * @param array $args
+     * @param array   $args
+     *
      * @return bool|\Illuminate\Database\Eloquent\Model
      */
     public function updateUser(Request $request, $args)
@@ -68,11 +71,13 @@ class User extends BaseModel
 
             // set field as null if empty
 
-            $user->$col = !empty($val)?$val:null;
+            $user->$col = !empty($val) ? $val : null;
         }
 
         if ($user->save()) {
+
             return User::find($user->id);
+
         } // refetch full user model
 
         return false;
