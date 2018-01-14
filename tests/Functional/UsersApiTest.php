@@ -2,7 +2,7 @@
 
 namespace Tests\Functional;
 
-class UserApiTest extends BaseTestCase
+class UsersApiTest extends BaseTestCase
 {
 
     /**

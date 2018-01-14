@@ -37,7 +37,6 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
      */
     public function runApp($requestMethod, $requestUri, $requestData = null)
     {
-
         $this->platform = getenv('PLATFORM');
 
         // Create a mock environment for testing with

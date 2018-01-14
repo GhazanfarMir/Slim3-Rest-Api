@@ -83,7 +83,7 @@ $app->group('/api', function () use ($app) {
             try {
                 $this->logger->info("Updating an existing user", ['id' => $args['id']]);
 
-                $user = (new User)->updateUpdate    ($request, $args);
+                $user = (new User)->updateUpdate($request, $args);
 
                 if ($user) {
                     return $response->withJson([
