@@ -21,6 +21,11 @@ $container['logger'] = function ($c) {
 // Service factory for the ORM
 $capsule = new \Illuminate\Database\Capsule\Manager;
 $capsule->addConnection($container->get('settings')['db']);
+if (getenv('APP_ENV') == 'travis') {
+    $capsule->addConnection($container->get('settings')['db_ci']);
+} else {
+    $capsule->addConnection($container->get('settings')['db']);
+}
 $capsule->bootEloquent();
 $capsule->setAsGlobal();
 $container['db'] = $capsule;

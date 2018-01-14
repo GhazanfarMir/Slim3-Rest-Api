@@ -26,6 +26,18 @@ return [
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
+        ],
+
+        // Travis DB settings
+        'db_ci' => [
+            'driver' => getenv('DB_DRIVER_CI'),
+            'host' => getenv('DB_HOST_CI'),
+            'database' => getenv('DB_NAME_CI'),
+            'username' => getenv('DB_USERNAME_CI'),
+            'password' => getenv('DB_PASSWORD_CI'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
         ]
     ],
 ];

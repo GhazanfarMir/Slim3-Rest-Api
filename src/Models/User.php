@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Slim\Http\Request;
 
 class User extends BaseModel
@@ -22,7 +21,7 @@ class User extends BaseModel
      * @param Request $request
      * @return bool|\Illuminate\Database\Eloquent\Model
      */
-    public function add(Request $request)
+    public function addUser(Request $request)
     {
         $user = new User();
 
@@ -53,7 +52,7 @@ class User extends BaseModel
      * @param array $args
      * @return bool|\Illuminate\Database\Eloquent\Model
      */
-    public function update(Request $request, $args)
+    public function updateUser(Request $request, $args)
     {
         $inputs = $request->getParams();
 

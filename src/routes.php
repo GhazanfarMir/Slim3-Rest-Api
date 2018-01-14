@@ -58,7 +58,7 @@ $app->group('/api', function () use ($app) {
             try {
                 $this->logger->info("Creating a new user", ['data' => $request->getParsedBody()]);
 
-                $user = (new User)->add($request);
+                $user = (new User)->addUser($request);
 
                 if ($user) {
                     return $response->withJson([
@@ -83,7 +83,7 @@ $app->group('/api', function () use ($app) {
             try {
                 $this->logger->info("Updating an existing user", ['id' => $args['id']]);
 
-                $user = (new User)->update($request, $args);
+                $user = (new User)->updateUpdate    ($request, $args);
 
                 if ($user) {
                     return $response->withJson([

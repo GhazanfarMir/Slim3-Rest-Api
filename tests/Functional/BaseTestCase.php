@@ -23,6 +23,11 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
     protected $withMiddleware = true;
 
     /**
+     * @var
+     */
+    protected $platform;
+
+    /**
      * Process the application given a request method and URI
      *
      * @param string $requestMethod the request method (e.g. GET, POST, etc.)
@@ -32,6 +37,9 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
      */
     public function runApp($requestMethod, $requestUri, $requestData = null)
     {
+
+        $this->platform = getenv('PLATFORM');
+
         // Create a mock environment for testing with
         $environment = Environment::mock(
             [
