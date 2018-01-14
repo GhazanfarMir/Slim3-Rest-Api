@@ -5,4 +5,16 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <env name="DB_DRIVER" value="mysql"/>
+        <env name="DB_HOST" value="localhost"/>
+        <env name="DB_NAME" value="slim_api"/>
+        <env name="DB_USERNAME" value="admin"/>
+        <env name="DB_PASSWORD" value="Pansymeer5"/>
+        <env name="DB_DRIVER_CI" value="mysql"/>
+        <env name="DB_HOST_CI" value="localhost"/>
+        <env name="DB_NAME_CI" value="slim_api"/>
+        <env name="DB_USERNAME_CI" value="travis"/>
+        <env name="DB_PASSWORD_CI" value=""/>
+    </php>
 </phpunit>

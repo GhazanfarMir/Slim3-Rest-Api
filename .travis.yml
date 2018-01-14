@@ -1,0 +1,26 @@
+sudo: required
+
+language: php
+
+services:
+  - mysql
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+env:
+  - APP_ENV=travis
+
+php:
+  - 7.1
+
+before_install:
+  - sudo apt-get update
+  - mysql -e 'CREATE DATABASE slim_api_test;'
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+script: phpunit

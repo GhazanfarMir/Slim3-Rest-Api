@@ -19,11 +19,23 @@ return [
 
         // Database settings
         'db' => [
-            'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'database'  => 'slim_api',
-            'username'  => 'root',
-            'password'  => 'ebury',
+            'driver' => getenv('DB_DRIVER'),
+            'host' => getenv('DB_HOST'),
+            'database' => getenv('DB_NAME'),
+            'username' => getenv('DB_USERNAME'),
+            'password' => getenv('DB_PASSWORD'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ],
+
+        // Travis DB settings
+        'db_ci' => [
+            'driver' => getenv('DB_DRIVER_CI'),
+            'host' => getenv('DB_HOST_CI'),
+            'database' => getenv('DB_NAME_CI'),
+            'username' => getenv('DB_USERNAME_CI'),
+            'password' => getenv('DB_PASSWORD_CI'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

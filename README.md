@@ -1,6 +1,7 @@
 # Slim3 Framework REST Api with CRUD
 
-[![StyleCI](https://styleci.io/repos/116841369/shield?branch=master)](https://styleci.io/repos/116841369)
+[![StyleCI](https://styleci.io/repos/116841369/shield?branch=develop)](https://styleci.io/repos/116841369)
+[![Build Status](https://travis-ci.org/ghazanfarmir/Slim3-Rest-Api.svg?branch=develop)](https://travis-ci.org/ghazanfarmir/Slim3-Rest-Api)
 
 This is the simple REST Api implementing basic CRUD operations related to a user.
 
@@ -31,21 +32,19 @@ $ composer install
 ## Database Setup
 
  - Import `dababase/mysql.sql` in your MySQL Server, this will create `users` table.
- - Configure database credentials in `/path/to/slim-rest-api-crud/src/settings.php`:
+ - Copy `.env.example` to `.env`  
+ - Update .env with your database credentials
  
 ```
-// Database settings
+// .env 
 
-'db' => [
-    'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'slim_api',
-    'username' => '',
-    'password' => '',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-]
+# Database
+DB_DRIVER=mysql
+DB_HOST=localhost
+DB_NAME=
+DB_USERNAME=
+DB_PASSWORD=
+
 ```
 
 ## Usage

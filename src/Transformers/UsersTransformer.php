@@ -32,10 +32,11 @@ class UsersTransformer
      */
     public function transformCollection(Collection $users)
     {
-        $data = [];
+
+        $data = array();
 
         foreach ($users as $user) {
-            $data[] = self::transform($user);
+            $data[] = UsersTransformer::transform($user);
         }
 
         return $data;

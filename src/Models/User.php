@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Slim\Http\Request;
 
-class User extends Model
+class User extends BaseModel
 {
     /**
      * @var array
@@ -22,9 +21,9 @@ class User extends Model
      *
      * @return bool|\Illuminate\Database\Eloquent\Model
      */
-    public function add(Request $request)
+    public function addUser(Request $request)
     {
-        $user = new self();
+        $user = new User();
 
         $inputs = $request->getParams();
 
@@ -42,7 +41,9 @@ class User extends Model
         }
 
         if ($user->save()) {
-            return self::find($user->id);
+
+            return User::find($user->id);
+
         } // refetch full user model
 
         return false;
@@ -54,11 +55,11 @@ class User extends Model
      *
      * @return bool|\Illuminate\Database\Eloquent\Model
      */
-    public function update(Request $request, $args)
+    public function updateUser(Request $request, $args)
     {
         $inputs = $request->getParams();
 
-        $user = self::find($args['id']);
+        $user = User::find($args['id']);
 
         foreach ($inputs as $col => $val) {
 
@@ -74,7 +75,9 @@ class User extends Model
         }
 
         if ($user->save()) {
-            return self::find($user->id);
+
+            return User::find($user->id);
+
         } // refetch full user model
 
         return false;
